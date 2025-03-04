@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import PostCard from './components/postcard';
 
 function App() {
 
@@ -31,7 +32,18 @@ function App() {
 
   return (
     <>
-      
+      <div className='p-4 flex justify-betwwen gap-5 justify-center flex-wrap'>
+      {/* <div className='p-4 flex flex-col items-center'> */}
+
+          {
+            initialPosts.map((post)=>(
+               <PostCard
+               key={post.id}
+               post={post}
+               />
+            ))
+          }
+      </div>
     </>
   )
 }
